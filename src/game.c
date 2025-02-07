@@ -33,7 +33,34 @@ void startGame() {
 
         switch (choice) {
             case 1:
-                exploreWorld(worlds, &luffy);
+                printf("\nSélectionnez un monde :\n");
+                World *current = worlds;
+                int i = 1;
+                while (current != NULL) {
+                    printf("%d. %s\n", i, current->name);
+                    current = current->next;
+                    i++;
+                }
+                printf("> ");
+                int worldChoice;
+                scanf("%d", &worldChoice);
+
+                current = worlds;
+                for (int j = 1; j < worldChoice && current != NULL; j++) {
+                    current = current->next;
+                }
+
+                if (current != NULL) {
+                    exploreWorld(current, &luffy);
+                    
+                    // Interaction avec PNJ
+                    if (current->npcs) {
+                        printf("\n💬 Vous rencontrez %s !\n", current->npcs->name);
+                        talkToNPC(current->npcs);
+                    }
+                } else {
+                    printf("❌ Monde invalide !\n");
+                }
                 break;
             case 2:
                 printf("Nouvelle vitesse (facteur de simulation) : ");
