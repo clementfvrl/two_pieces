@@ -1,0 +1,4 @@
+[Joueur]
+Luffy 100 50 10
+[Temps]
+15 1
