@@ -54,11 +54,11 @@ void setTimeSpeed(SimulationTime *simTime, int speed)
     if (speed > 0)
     {
         simTime->time_speed = speed;
-        printf("Vitesse de simulation réglée à x%d\n", speed);
+        printf("Vitesse de simulation reglee a x%d\n", speed);
     }
     else
     {
-        printf("La vitesse doit être positive !\n");
+        printf("La vitesse doit etre positive !\n");
     }
 }
 
@@ -66,7 +66,7 @@ void displayTime(const SimulationTime *simTime)
 {
     char timeStr[100];
     formatTimeString(simTime, timeStr, sizeof(timeStr));
-    printf("Temps simulé actuel: %s\n", timeStr);
+    printf("Temps simule actuel: %s\n", timeStr);
     printf("Vitesse de simulation: x%d\n", simTime->time_speed);
 }
 
@@ -81,10 +81,10 @@ int getTimeInMinutes(const SimulationTime *simTime)
 
 void formatTimeString(const SimulationTime *simTime, char *buffer, int bufferSize)
 {
-    // Format the time as Jour X, Mois Y, Année Z - HH:MM
+    // Format the time as Jour X, Mois Y, Annee Z - HH:MM
     const char *monthNames[] = {
-        "Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
-        "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"};
+        "Janvier", "Fevrier", "Mars", "Avril", "Mai", "Juin",
+        "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Decembre"};
 
     snprintf(buffer, bufferSize, "Jour %d, %s, An %d - %02d:%02d",
              simTime->days,

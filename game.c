@@ -14,7 +14,7 @@ void combatEventHandler(void *emitter, void *target, void *context)
     Player *player = (Player *)emitter;
     Enemy *enemy = (Enemy *)target;
 
-    printf("⚔️ Combat déclenché entre %s et %s !\n", player->name, enemy->name);
+    printf("⚔️ Combat declenche entre %s et %s !\n", player->name, enemy->name);
     startCombat(player, enemy);
 }
 
@@ -28,7 +28,7 @@ void healEventHandler(void *emitter, void *target, void *context)
     if (player->health > 100)
         player->health = 100;
 
-    printf("💚 %s a regagné %d points de vie ! (Total: %d/100)\n",
+    printf("💚 %s a regagne %d points de vie ! (Total: %d/100)\n",
            player->name, healAmount, player->health);
 }
 
@@ -59,7 +59,7 @@ void startGame()
         printf("\nQue voulez-vous faire ?\n");
         printf("1. Explorer un monde\n");
         printf("2. Modifier la vitesse de simulation\n");
-        printf("3. Avancer le temps simulé\n");
+        printf("3. Avancer le temps simule\n");
         printf("4. Sauvegarder la simulation\n");
         printf("5. Charger une sauvegarde\n");
         printf("6. Quitter\n");
@@ -70,7 +70,7 @@ void startGame()
         {
             int c;
             while ((c = getchar()) != '\n' && c != EOF);
-            printf("Entrée invalide. Veuillez entrer un nombre.\n");
+            printf("Entree invalide. Veuillez entrer un nombre.\n");
             continue;
         }
 
@@ -78,7 +78,7 @@ void startGame()
         {
         case 1:
         {
-            printf("\nSélectionnez un monde :\n");
+            printf("\nSelectionnez un monde :\n");
             World *current = worlds;
             int i = 1;
             while (current != NULL)
@@ -94,7 +94,7 @@ void startGame()
             {
                 int c;
                 while ((c = getchar()) != '\n' && c != EOF);
-                printf("Entrée invalide. Veuillez entrer un nombre.\n");
+                printf("Entree invalide. Veuillez entrer un nombre.\n");
                 continue;
             }
 
@@ -107,9 +107,9 @@ void startGame()
                 int inWorld = 1;
                 while (inWorld)
                 {
-                    printf("\nVous êtes dans le monde : %s\n", current->name);
-                    printf("1. Explorer (événement aléatoire)\n");
-                    printf("2. Se déplacer sur la carte\n");
+                    printf("\nVous etes dans le monde : %s\n", current->name);
+                    printf("1. Explorer (evenement aleatoire)\n");
+                    printf("2. Se deplacer sur la carte\n");
                     printf("3. Revenir au menu principal\n");
                     printf("> ");
                     int action;
@@ -117,7 +117,7 @@ void startGame()
                     {
                         int c;
                         while ((c = getchar()) != '\n' && c != EOF);
-                        printf("Entrée invalide.\n");
+                        printf("Entree invalide.\n");
                         continue;
                     }
 
@@ -159,13 +159,13 @@ void startGame()
             {
                 int c;
                 while ((c = getchar()) != '\n' && c != EOF);
-                printf("Entrée invalide. Veuillez entrer un nombre.\n");
+                printf("Entree invalide. Veuillez entrer un nombre.\n");
                 continue;
             }
 
             if (newSpeed < 1 || newSpeed > 10)
             {
-                printf("La vitesse doit être entre 1 et 10.\n");
+                printf("La vitesse doit etre entre 1 et 10.\n");
             }
             else
             {
@@ -186,7 +186,7 @@ void startGame()
             {
                 int c;
                 while ((c = getchar()) != '\n' && c != EOF);
-                printf("Entrée invalide. Veuillez entrer un nombre.\n");
+                printf("Entree invalide. Veuillez entrer un nombre.\n");
                 continue;
             }
 
@@ -214,7 +214,7 @@ void startGame()
 
             if (timeAmount <= 0)
             {
-                printf("Le temps à avancer doit être positif.\n");
+                printf("Le temps a avancer doit etre positif.\n");
                 continue;
             }
 
@@ -225,11 +225,11 @@ void startGame()
         }
         case 4:
             saveGame(&luffy, worlds, &simTime, "save.txt");
-            printf("Simulation sauvegardée.\n");
+            printf("Simulation sauvegardee.\n");
             break;
         case 5:
             loadGame(&luffy, &simTime, "save.txt");
-            printf("Simulation chargée.\n");
+            printf("Simulation chargee.\n");
             break;
         case 6:
             running = 0;

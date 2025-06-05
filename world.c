@@ -20,7 +20,7 @@ World *initializeWorlds()
     makino->next = eastBlue->npcs->next;
     eastBlue->npcs->next = makino;
 
-    NPC *mayor = createNPC("Woop Slap", "Fais attention à toi, Luffy. La mer est dangereuse!", FRIENDLY);
+    NPC *mayor = createNPC("Woop Slap", "Fais attention a toi, Luffy. La mer est dangereuse!", FRIENDLY);
     mayor->next = makino->next;
     makino->next = mayor;
 
@@ -33,15 +33,15 @@ World *initializeWorlds()
     // Initialize Grand Line
     World *grandLine = malloc(sizeof(World));
     strncpy(grandLine->name, "Grand Line", 20);
-    strncpy(grandLine->description, "Un océan imprévisible avec des ennemis redoutables.", 100);
+    strncpy(grandLine->description, "Un ocean imprevisible avec des ennemis redoutables.", 100);
 
     // Grand Line NPCs
-    grandLine->npcs = createNPC("Rayleigh", "Je peux t'aider à maîtriser le Haki.", FRIENDLY);
+    grandLine->npcs = createNPC("Rayleigh", "Je peux t'aider a maîtriser le Haki.", FRIENDLY);
     NPC *shakky = createNPC("Shakky", "Bienvenue au bar de l'Arnaque. Des nouvelles fraîches?", MERCHANT);
     shakky->next = grandLine->npcs->next;
     grandLine->npcs->next = shakky;
 
-    NPC *crocus = createNPC("Crocus", "J'étais le médecin de bord de Gold Roger.", QUEST_GIVER);
+    NPC *crocus = createNPC("Crocus", "J'etais le medecin de bord de Gold Roger.", QUEST_GIVER);
     crocus->next = shakky->next;
     shakky->next = crocus;
 
@@ -54,15 +54,15 @@ World *initializeWorlds()
     // Initialize Water 7
     World *water7 = malloc(sizeof(World));
     strncpy(water7->name, "Water 7", 20);
-    strncpy(water7->description, "Une ville construite sur l'eau, célèbre pour ses charpentiers.", 100);
+    strncpy(water7->description, "Une ville construite sur l'eau, celebre pour ses charpentiers.", 100);
 
     // Water 7 NPCs
     water7->npcs = createNPC("Iceburg", "Merry ne peut plus naviguer. Je te propose un nouveau navire.", QUEST_GIVER);
-    NPC *franky = createNPC("Franky", "SUPER! Tu as besoin d'un charpentier dans ton équipage?", FRIENDLY);
+    NPC *franky = createNPC("Franky", "SUPER! Tu as besoin d'un charpentier dans ton equipage?", FRIENDLY);
     franky->next = water7->npcs->next;
     water7->npcs->next = franky;
 
-    NPC *paulie = createNPC("Paulie", "Je peux te vendre des cordages spéciaux pour ton navire.", MERCHANT);
+    NPC *paulie = createNPC("Paulie", "Je peux te vendre des cordages speciaux pour ton navire.", MERCHANT);
     paulie->next = franky->next;
     franky->next = paulie;
 
@@ -75,11 +75,11 @@ World *initializeWorlds()
     // Initialize Skypiea
     World *skypiea = malloc(sizeof(World));
     strncpy(skypiea->name, "Skypiea", 20);
-    strncpy(skypiea->description, "Une île dans les nuages avec des technologies étranges.", 100);
+    strncpy(skypiea->description, "Une île dans les nuages avec des technologies etranges.", 100);
 
     // Skypiea NPCs
-    skypiea->npcs = createNPC("Gan Fall", "Je suis l'ancien dieu de cette île céleste.", FRIENDLY);
-    NPC *conis = createNPC("Conis", "Je peux vous guider à travers Skypiea.", QUEST_GIVER);
+    skypiea->npcs = createNPC("Gan Fall", "Je suis l'ancien dieu de cette île celeste.", FRIENDLY);
+    NPC *conis = createNPC("Conis", "Je peux vous guider a travers Skypiea.", QUEST_GIVER);
     conis->next = skypiea->npcs->next;
     skypiea->npcs->next = conis;
 
@@ -96,10 +96,10 @@ World *initializeWorlds()
     // Initialize New World
     World *newWorld = malloc(sizeof(World));
     strncpy(newWorld->name, "Nouveau Monde", 20);
-    strncpy(newWorld->description, "La partie la plus dangereuse de Grand Line, où les plus forts règnent.", 100);
+    strncpy(newWorld->description, "La partie la plus dangereuse de Grand Line, où les plus forts regnent.", 100);
 
     // New World NPCs
-    newWorld->npcs = createNPC("Jinbe", "La route est dangereuse, je peux vous aider à naviguer.", FRIENDLY);
+    newWorld->npcs = createNPC("Jinbe", "La route est dangereuse, je peux vous aider a naviguer.", FRIENDLY);
     NPC *hancock = createNPC("Boa Hancock", "Luffy, je ferai tout pour t'aider!", QUEST_GIVER);
     hancock->next = newWorld->npcs->next;
     newWorld->npcs->next = hancock;
@@ -150,7 +150,7 @@ void exploreWorld(World *world, Player *player)
             break;
         }
 
-        printf(", coût: %d énergie)\n", world->services->cost);
+        printf(", coût: %d energie)\n", world->services->cost);
 
         printf("\nVoulez-vous utiliser ce service? (1: Oui, 0: Non) > ");
         int useService;
@@ -256,7 +256,7 @@ void triggerRandomEvent(World *world, Player *player)
             break;
 
         case 1:
-            printf("💬 Vous rencontrez un voyageur mystérieux...\n");
+            printf("💬 Vous rencontrez un voyageur mysterieux...\n");
             printf("'Ah, un pirate! Je cherche quelqu'un pour m'aider.'\n");
             printf("Acceptez-vous de l'aider? (1: Oui, 0: Non) > ");
 
@@ -265,9 +265,9 @@ void triggerRandomEvent(World *world, Player *player)
 
             if (choice == 1)
             {
-                printf("'Merci! Voici une récompense pour ta gentillesse.'\n");
+                printf("'Merci! Voici une recompense pour ta gentillesse.'\n");
                 player->energy += 15;
-                printf("Vous gagnez 15 points d'énergie! (Total: %d)\n", player->energy);
+                printf("Vous gagnez 15 points d'energie! (Total: %d)\n", player->energy);
             }
             else
             {
@@ -286,17 +286,17 @@ void triggerRandomEvent(World *world, Player *player)
                 player->health += 20;
                 if (player->health > 100)
                     player->health = 100;
-                printf("Vous récupérez 20 points de vie ! (Total: %d/100)\n", player->health);
+                printf("Vous recuperez 20 points de vie ! (Total: %d/100)\n", player->health);
                 break;
             case 1:
-                printf("Le coffre contient un fruit étrange...\n");
+                printf("Le coffre contient un fruit etrange...\n");
                 player->strength += 3;
                 printf("Vous gagnez 3 points de force ! (Total: %d)\n", player->strength);
                 break;
             case 2:
-                printf("Le coffre contient une boisson énergisante !\n");
+                printf("Le coffre contient une boisson energisante !\n");
                 player->energy += 25;
-                printf("Vous gagnez 25 points d'énergie ! (Total: %d)\n", player->energy);
+                printf("Vous gagnez 25 points d'energie ! (Total: %d)\n", player->energy);
                 break;
             }
             break;
@@ -307,43 +307,43 @@ void triggerRandomEvent(World *world, Player *player)
         // World-specific events
         if (strcmp(world->name, "East Blue") == 0)
         {
-            printf("🌊 Une petite tempête se lève...\n");
-            printf("Vous décidez de vous abriter dans une grotte côtière.\n");
-            printf("À l'intérieur, vous trouvez un vieux coffre abandonné !\n");
+            printf("🌊 Une petite tempete se leve...\n");
+            printf("Vous decidez de vous abriter dans une grotte côtiere.\n");
+            printf("a l'interieur, vous trouvez un vieux coffre abandonne !\n");
             player->energy += 10;
-            printf("Vous gagnez 10 points d'énergie ! (Total: %d)\n", player->energy);
+            printf("Vous gagnez 10 points d'energie ! (Total: %d)\n", player->energy);
         }
         else if (strcmp(world->name, "Grand Line") == 0)
         {
-            printf("🧲 La boussole devient folle à cause du champ magnétique !\n");
+            printf("🧲 La boussole devient folle a cause du champ magnetique !\n");
             printf("Vous vous perdez pendant quelques heures...\n");
             player->energy -= 10;
             if (player->energy < 0)
                 player->energy = 0;
-            printf("Vous perdez 10 points d'énergie. (Total: %d)\n", player->energy);
+            printf("Vous perdez 10 points d'energie. (Total: %d)\n", player->energy);
         }
         else if (strcmp(world->name, "Water 7") == 0)
         {
             printf("🌊 L'Aqua Laguna approche ! L'eau monte dans les rues.\n");
-            printf("Vous aidez des habitants à se mettre à l'abri.\n");
+            printf("Vous aidez des habitants a se mettre a l'abri.\n");
             player->strength += 2;
             printf("Cet effort vous rend plus fort ! (+2 force, Total: %d)\n", player->strength);
         }
         else if (strcmp(world->name, "Skypiea") == 0)
         {
-            printf("⚡ Un éclair d'Enel frappe près de vous !\n");
+            printf("⚡ Un eclair d'Enel frappe pres de vous !\n");
             int damage = rand() % 10 + 5;
             player->health -= damage;
-            printf("Vous prenez %d points de dégâts ! (Santé: %d/100)\n", damage, player->health);
+            printf("Vous prenez %d points de degâts ! (Sante: %d/100)\n", damage, player->health);
         }
         else if (strcmp(world->name, "Nouveau Monde") == 0)
         {
-            printf("🌋 Une île volcanique entre en éruption près de vous !\n");
-            printf("La chaleur est intense mais vous résistez...\n");
+            printf("🌋 Une île volcanique entre en eruption pres de vous !\n");
+            printf("La chaleur est intense mais vous resistez...\n");
             player->strength += 5;
             player->health -= 10;
             printf("Vous gagnez 5 points de force mais perdez 10 points de vie.\n");
-            printf("Force: %d, Santé: %d/100\n", player->strength, player->health);
+            printf("Force: %d, Sante: %d/100\n", player->strength, player->health);
         }
     }
 }

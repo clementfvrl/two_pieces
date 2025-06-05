@@ -22,7 +22,7 @@ void startCombat(Player *player, Enemy *enemy) {
 
         if (choice == 1) {
             enemy->health -= 10;
-            printf("💥 Vous infligez 10 dégâts à %s !\n", enemy->name);
+            printf("💥 Vous infligez 10 degâts a %s !\n", enemy->name);
         } else if (choice == 2) {
             printf("🛡️ Vous esquivez l'attaque !\n");
             continue;
@@ -32,7 +32,7 @@ void startCombat(Player *player, Enemy *enemy) {
         }
 
         player->health -= enemy->attack;
-        printf("⚡ %s vous inflige %d dégâts !\n", enemy->name, enemy->attack);
+        printf("⚡ %s vous inflige %d degâts !\n", enemy->name, enemy->attack);
     }
 
     if (player->health <= 0) {

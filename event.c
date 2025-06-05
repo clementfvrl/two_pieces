@@ -23,7 +23,7 @@ void addEvent(
     Event *newEvent = (Event *)malloc(sizeof(Event));
     if (!newEvent)
     {
-        printf("Erreur: Échec d'allocation de mémoire pour nouvel événement.\n");
+        printf("Erreur: echec d'allocation de memoire pour nouvel evenement.\n");
         return;
     }
 
@@ -101,7 +101,7 @@ void scheduleRecurringEvent(
     RecurringEventContext *recurContext = malloc(sizeof(RecurringEventContext));
     if (!recurContext)
     {
-        printf("Erreur: Impossible d'allouer la mémoire pour l'événement récurrent.\n");
+        printf("Erreur: Impossible d'allouer la memoire pour l'evenement recurrent.\n");
         return;
     }
 
@@ -177,14 +177,14 @@ void processEvents(EventQueue *queue, const SimulationTime *currentTime)
     // Print debug info
     char timeStr[100];
     formatTimeString(currentTime, timeStr, sizeof(timeStr));
-    printf("\nTraitement des événements à %s...\n", timeStr);
+    printf("\nTraitement des evenements a %s...\n", timeStr);
 
     while (current != NULL)
     {
         if (current->execution_time <= currentTimeInMinutes)
         {
             // Execute the event
-            printf("Exécution de l'événement: %s -> %s [",
+            printf("Execution de l'evenement: %s -> %s [",
                    current->emitter, current->target);
 
             // Print event type
@@ -262,7 +262,7 @@ void processEvents(EventQueue *queue, const SimulationTime *currentTime)
 
     if (prev == NULL && queue->head == NULL)
     {
-        printf("Aucun événement à traiter.\n");
+        printf("Aucun evenement a traiter.\n");
     }
 }
 

@@ -7,22 +7,22 @@ void interactWithService(Player *player, Service *service) {
             if (player->energy >= service->cost) {
                 player->health = 100;
                 player->energy -= service->cost;
-                printf("Vous avez été soigné ! Santé restaurée.\n");
+                printf("Vous avez ete soigne ! Sante restauree.\n");
             } else {
-                printf("Pas assez d'énergie pour ce service.\n");
+                printf("Pas assez d'energie pour ce service.\n");
             }
             break;
         case TRAIN:
             if (player->energy >= service->cost) {
                 player->strength += 5;
                 player->energy -= service->cost;
-                printf("Entraînement terminé. Force augmentée !\n");
+                printf("Entraînement termine. Force augmentee !\n");
             } else {
-                printf("Vous êtes trop fatigué pour vous entraîner.\n");
+                printf("Vous etes trop fatigue pour vous entraîner.\n");
             }
             break;
         case SHOP:
-            printf("Achat d'objets non implémenté pour l'instant.\n");
+            printf("Achat d'objets non implemente pour l'instant.\n");
             break;
     }
 }

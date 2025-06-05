@@ -7,25 +7,25 @@ void interactWithService(Player *player, Service *service) {
             if (player->energy >= service->cost) {
                 player->health = 100;
                 player->energy -= service->cost;
-                printf("Vous avez été soigné ! Santé restaurée.\n");
+                printf("Vous avez ete soigne ! Sante restauree.\n");
             } else {
-                printf("Pas assez d'énergie pour ce service.\n");
+                printf("Pas assez d'energie pour ce service.\n");
             }
             break;
         case TRAIN:
             if (player->energy >= service->cost) {
                 player->strength += 5;
                 player->energy -= service->cost;
-                printf("Entraînement terminé. Force augmentée !\n");
+                printf("Entraînement termine. Force augmentee !\n");
             } else {
-                printf("Vous êtes trop fatigué pour vous entraîner.\n");
+                printf("Vous etes trop fatigue pour vous entraîner.\n");
             }
             break;
         case SHOP:
             printf("Bienvenue dans la boutique !\n");
             printf("Que voulez-vous acheter ?\n");
-            printf("1. Potion d'énergie (10 pièces d'or)\n");
-            printf("2. Équipement spécial (50 pièces d'or)\n");
+            printf("1. Potion d'energie (10 pieces d'or)\n");
+            printf("2. equipement special (50 pieces d'or)\n");
             printf("3. Rien, merci.\n");
             int choice;
             scanf("%d", &choice);
@@ -34,7 +34,7 @@ void interactWithService(Player *player, Service *service) {
                     if (player->money >= 10) {
                         player->energy += 20;
                         player->money -= 10;
-                        printf("Vous avez acheté une potion d'énergie !\n");
+                        printf("Vous avez achete une potion d'energie !\n");
                     } else {
                         printf("Pas assez d'argent pour cette potion.\n");
                     }
@@ -43,9 +43,9 @@ void interactWithService(Player *player, Service *service) {
                     if (player->money >= 50) {
                         player->strength += 10;
                         player->money -= 50;
-                        printf("Vous avez acheté un équipement spécial !\n");
+                        printf("Vous avez achete un equipement special !\n");
                     } else {
-                        printf("Pas assez d'argent pour cet équipement.\n");
+                        printf("Pas assez d'argent pour cet equipement.\n");
                     }
                     break;
                 case 3:

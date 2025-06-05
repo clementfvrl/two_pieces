@@ -37,7 +37,7 @@ void saveGame(const Player *player, const World *worlds, const SimulationTime *s
     // We could also save world state, events, etc.
 
     fclose(file);
-    printf("✔ Sauvegarde réussie dans %s !\n", filename);
+    printf("✔ Sauvegarde reussie dans %s !\n", filename);
 }
 
 void loadGame(Player *player, SimulationTime *simTime, const char *filename)
@@ -45,7 +45,7 @@ void loadGame(Player *player, SimulationTime *simTime, const char *filename)
     FILE *file = fopen(filename, "r");
     if (!file)
     {
-        printf("❌ Aucun fichier de sauvegarde trouvé.\n");
+        printf("❌ Aucun fichier de sauvegarde trouve.\n");
         return;
     }
 
@@ -81,5 +81,5 @@ void loadGame(Player *player, SimulationTime *simTime, const char *filename)
     }
 
     fclose(file);
-    printf("✔ Chargement réussi depuis %s !\n", filename);
+    printf("✔ Chargement reussi depuis %s !\n", filename);
 }

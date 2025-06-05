@@ -21,7 +21,7 @@ void processEvents(EventQueue *queue, int current_time) {
     Event *prev = NULL, *current = queue->head;
     while (current != NULL) {
         if (current->execution_time <= current_time) {
-            printf("Exécution de l'événement: %s -> %s [%d]\n", current->emitter, current->target, current->type);
+            printf("Execution de l'evenement: %s -> %s [%d]\n", current->emitter, current->target, current->type);
             if (prev) prev->next = current->next;
             else queue->head = current->next;
             free(current);

@@ -96,6 +96,15 @@ void moveOnMap(World *world, Player *player, char direction) {
             start_boss_fight(player);
         } else if (playerX == 2 && playerY == 1) {
             printf("[DECOUVERTE] Vous decouvrez un navire abandonne.\n");
+                printf("Vous pouvez fouiller le navire pour trouver des ressources.\n");
+                    char choice;
+                    printf("Voulez-vous fouiller le navire ? (o/n) ");
+                    scanf(" %c", &choice);
+                    if (choice == 'o' || choice == 'O') {
+                        navireabondonnee(world, player);
+                    } else {
+                        printf("[INFO] Vous avez decide de ne pas fouiller le navire.\n");
+                    }
         } else {
             printf("[INFO] Rien d'interessant ici...\n");
         }
@@ -103,6 +112,15 @@ void moveOnMap(World *world, Player *player, char direction) {
         printf("[!] Impossible d'aller plus loin dans cette direction !\n");
     }
 }
+
+void navireabondonnee(World *world, Player *player) {
+    printf("[NAVIRE] Vous explorez le navire abandonne...\n");
+    printf("Vous trouvez des provisions et un coffre !\n");
+    player->energy += 10;
+    player->money += 50;
+    printf("Energie +10, Argent +50 (Total: %d)\n", player->money);
+}
+
 
 void triggerRandomEvent(World *world, Player *player) {
     srand(time(NULL));
@@ -119,14 +137,14 @@ void triggerRandomEvent(World *world, Player *player) {
             printf("[RENCONTRE] Vous croisez un PNJ mysterieux...\n");
             break;
         case 2:
-            printf("[TRESOR] Vous trouvez une potion d'energie !\n");
+            printf("[TRESOR] Vous trouvez une potion d energie !\n");
             player->energy += 10;
             break;
     
         case 3:
             printf("Vous trouvez de l'argent !\n");
             player->money += 20;
-            printf("Vous gagnez 20 pièces d'or ! (Total: %d)\n", player->money);
+            printf("Vous gagnez 20 pieces d'or ! (Total: %d)\n", player->money);
             break;
 }
     }

@@ -12,8 +12,8 @@ typedef struct {
 void start_boss_fight(Player *player) {
     Boss kaido = {"Kaido", 200, 30, 10};
 
-    printf("⚠️ Vous entrez dans la zone du boss : %s !\n", kaido.name);
-    printf("Un combat épique commence !\n");
+    printf("!!! Vous entrez dans la zone du boss : %s !\n"!!!, kaido.name);
+    printf("Un combat epique commence !\n");
 
     int choice;
 
@@ -26,7 +26,7 @@ void start_boss_fight(Player *player) {
     case 1:
 
         if (kaido.hp <= 0) {
-            printf("🎉 Vous avez vaincu %s !\n", kaido.name);
+            printf(" Vous avez vaincu %s !\n", kaido.name);
             break;
         }
 
@@ -34,19 +34,19 @@ void start_boss_fight(Player *player) {
         player->health -= kaido.attack;
 
         if (player->health <= 0) {
-            printf("💀 Vous avez été vaincu...\n");
+            printf(" Vous avez ete vaincu...\n");
         }
                 case 2:
             printf("Vous essayez de fuir le combat...\n");
             if (rand() % 2 == 0) {
-                printf("Vous avez réussi à fuir !\n");
+                printf("Vous avez reussi a fuir !\n");
 
             } else {
                 printf("Vous n'avez pas pu fuir ! %s vous attaque !\n", kaido.name);
                 player->health -= kaido.attack;
 
                 if (player->health <= 0) {
-                    printf("💀 Vous avez été vaincu...\n");
+                    printf(" Vous avez ete vaincu...\n");
                 }
             }
             break;

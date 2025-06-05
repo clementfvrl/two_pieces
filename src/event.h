@@ -4,11 +4,11 @@
 typedef enum { COMBAT, DIALOGUE, DEPLACEMENT, SOIN, RECRUTEMENT, BOSS } EventType;
 
 typedef struct Event {
-    char emitter[20];  // Qui génère l'événement ?
-    char target[20];   // Qui est concerné ?
-    EventType type;    // Type de l'événement
-    int execution_time;// Temps d'exécution dans la simulation
-    struct Event *next;// Liste chaînée pour l'échéancier
+    char emitter[20];  // Qui genere l'evenement ?
+    char target[20];   // Qui est concerne ?
+    EventType type;    // Type de l'evenement
+    int execution_time;// Temps d'execution dans la simulation
+    struct Event *next;// Liste chaînee pour l'echeancier
 } Event;
 
 typedef struct {

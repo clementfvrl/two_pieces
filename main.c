@@ -5,7 +5,7 @@ int main() {
     printf("Bienvenue dans le jeu SIMS One Piece !\n");
     printf("Chargement du jeu...\n");
 
-    startGame(); // Fonction principale qui gère la boucle du jeu
+    startGame(); // Fonction principale qui gere la boucle du jeu
 
     return 0;
 }

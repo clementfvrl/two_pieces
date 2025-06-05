@@ -17,9 +17,9 @@ void talkToNPC(NPC *npc) {
     printf("\n💬 %s : \"%s\"\n", npc->name, npc->dialogue);
 
     if (npc->type == MERCHANT) {
-        printf("🛒 Ce PNJ vend des objets (à implémenter).\n");
+        printf("🛒 Ce PNJ vend des objets (a implementer).\n");
     } else if (npc->type == QUEST_GIVER) {
-        printf("🎯 Ce PNJ peut donner une quête !\n");
+        printf("🎯 Ce PNJ peut donner une quete !\n");
     }
 }
 

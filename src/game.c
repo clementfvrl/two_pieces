@@ -24,7 +24,7 @@ void startGame() {
         printf("\nQue voulez-vous faire ?\n");
         printf("1. Explorer un monde\n");
         printf("2. Modifier la vitesse de simulation\n");
-        printf("3. Avancer le temps simulé\n");
+        printf("3. Avancer le temps simule\n");
         printf("4. Sauvegarder la simulation\n");
         printf("5. Charger une sauvegarde\n");
         printf("6. Quitter\n");
@@ -33,7 +33,7 @@ void startGame() {
 
         switch (choice) {
             case 1:
-                printf("\nSélectionnez un monde :\n");
+                printf("\nSelectionnez un monde :\n");
                 World *current = worlds;
                 int i = 1;
                 while (current != NULL) {
@@ -53,16 +53,17 @@ void startGame() {
                 if (current != NULL) {
                     int inWorld = 1;
                     while (inWorld) {
-                        printf("\nVous êtes dans le monde : %s\n", current->name);
-                        printf("1. Explorer (événement aléatoire)\n");
-                        printf("2. Se déplacer sur la carte\n");
-                        printf("3. Revenir au menu principal\n");
+                        printf("\nVous etes dans le monde : %s\n", current->name);
+                        printf("1. Explorer (evenement aleatoire)\n");
+                        printf("2. Se deplacer sur la carte\n");
+                        printf("3. Voir les Statistiques\n");
+                        printf("4. Revenir au menu principal\n");
                         printf("> ");
                         int action;
                         if (scanf("%d", &action) != 1) {
                             int c;
                             while ((c = getchar()) != '\n' && c != EOF);
-                            printf("Entrée invalide.\n");
+                            printf("Entree invalide.\n");
                             continue;
                         }
 
@@ -70,7 +71,7 @@ void startGame() {
                             case 1:
                                 exploreWorld(current, &luffy);
                                 if (current->npcs) {
-                                    printf("\n💬 Vous rencontrez %s !\n", current->npcs->name);
+                                    printf("\n Vous rencontrez %s !\n", current->npcs->name);
                                     talkToNPC(current->npcs);
                                 }
                                 break;
@@ -81,6 +82,10 @@ void startGame() {
                                 moveOnMap(current, &luffy, dir);
                                 break;
                             case 3:
+                                displayPlayerStats(&luffy);
+                                break;
+                                
+                            case 4:
                                 inWorld = 0;
                                 break;
                             default:
@@ -106,11 +111,11 @@ void startGame() {
                 break;
             case 4:
                 saveGame(&luffy, worlds, &simTime, "save.txt");
-                printf("Simulation sauvegardée.\n");
+                printf("Simulation sauvegardee.\n");
                 break;
             case 5:
                 loadGame(&luffy, &simTime, "save.txt");
-                printf("Simulation chargée.\n");
+                printf("Simulation chargee.\n");
                 break;
             case 6:
                 running = 0;

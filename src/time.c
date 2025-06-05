@@ -13,10 +13,10 @@ void advanceTime(SimulationTime *simTime, int ticks) {
 void setTimeSpeed(SimulationTime *simTime, int speed) {
     if (speed > 0) {
         simTime->time_speed = speed;
-        printf("Vitesse de simulation réglée à x%d\n", speed);
+        printf("Vitesse de simulation reglee a x%d\n", speed);
     }
 }
 
 void displayTime(const SimulationTime *simTime) {
-    printf("Temps simulé actuel: %d\n", simTime->current_time);
+    printf("Temps simule actuel: %d\n", simTime->current_time);
 }
