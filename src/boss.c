@@ -14,8 +14,15 @@ void start_boss_fight(Player *player) {
 
     printf("⚠️ Vous entrez dans la zone du boss : %s !\n", kaido.name);
     printf("Un combat épique commence !\n");
+    int choice;
 
-    while (kaido.hp > 0 && player->health > 0) {
+    switch(choice) {
+    printf("Choisissez votre action :\n");
+    printf("1. Attaquer %s\n", kaido.name);
+    printf("2. Fuir le combat\n");
+    printf("> ");
+    scanf(" %c", &choice);
+    case 1:
         printf("Vous attaquez %s !\n", kaido.name);
         kaido.hp -= player->strength - kaido.defense;
 
@@ -30,5 +37,20 @@ void start_boss_fight(Player *player) {
         if (player->health <= 0) {
             printf("💀 Vous avez été vaincu...\n");
         }
+
+        case 2:
+            printf("Vous essayez de fuir le combat...\n");
+            if (rand() % 2 == 0) {
+                printf("Vous avez réussi à fuir !\n");
+                
+            } else {
+                printf("Vous n'avez pas pu fuir ! %s vous attaque !\n", kaido.name);
+                player->health -= kaido.attack;
+
+                if (player->health <= 0) {
+                    printf("💀 Vous avez été vaincu...\n");
+                }
+            }
+            break;
     }
 }

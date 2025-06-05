@@ -48,7 +48,7 @@ void displayWorldMap(World *world) {
 
 void triggerRandomEvent(World *world, Player *player) {
     srand(time(NULL)); // Initialisation de l'aléatoire
-    int event = rand() % 3; // Trois types d'événements possibles
+    int event = rand() % 4; // Trois types d'événements possibles
 
     switch (event) {
         case 0:
@@ -64,6 +64,11 @@ void triggerRandomEvent(World *world, Player *player) {
         case 2:
             printf("🎁 Vous trouvez un coffre avec une potion d'énergie !\n");
             player->energy += 10;
+            break;
+        case 3:
+            printf("Vous trouvez de l'argent !\n");
+            player->money += 20;
+            printf("Vous gagnez 20 pièces d'or ! (Total: %d)\n", player->money);
             break;
     }
 }

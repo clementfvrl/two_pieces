@@ -22,7 +22,38 @@ void interactWithService(Player *player, Service *service) {
             }
             break;
         case SHOP:
-            printf("Achat d'objets non implémenté pour l'instant.\n");
+            printf("Bienvenue dans la boutique !\n");
+            printf("Que voulez-vous acheter ?\n");
+            printf("1. Potion d'énergie (10 pièces d'or)\n");
+            printf("2. Équipement spécial (50 pièces d'or)\n");
+            printf("3. Rien, merci.\n");
+            int choice;
+            scanf("%d", &choice);
+            switch (choice) {
+                case 1:
+                    if (player->money >= 10) {
+                        player->energy += 20;
+                        player->money -= 10;
+                        printf("Vous avez acheté une potion d'énergie !\n");
+                    } else {
+                        printf("Pas assez d'argent pour cette potion.\n");
+                    }
+                    break;
+                case 2:
+                    if (player->money >= 50) {
+                        player->strength += 10;
+                        player->money -= 50;
+                        printf("Vous avez acheté un équipement spécial !\n");
+                    } else {
+                        printf("Pas assez d'argent pour cet équipement.\n");
+                    }
+                    break;
+                case 3:
+                    printf("Merci de votre visite !\n");
+                    break;
+                default:
+                    printf("Choix invalide.\n");
+            }
             break;
     }
 }

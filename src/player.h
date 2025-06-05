@@ -12,6 +12,7 @@ typedef struct {
     int health;
     int energy;
     int strength;
+    int money; 
     CrewMember *crew;
 } Player;
 
