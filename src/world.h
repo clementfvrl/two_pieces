@@ -18,5 +18,7 @@ void exploreWorld(World *world, Player *player);
 void displayWorldMap(World *world);
 void triggerRandomEvent(World *world, Player *player);
 void freeWorlds(World *world);
+void moveOnMap(World *world, Player *player, char direction);
+
 
 #endif
