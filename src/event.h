@@ -1,7 +1,7 @@
 #ifndef EVENT_H
 #define EVENT_H
 
-typedef enum { COMBAT, DIALOGUE, DEPLACEMENT, SOIN, RECRUTEMENT } EventType;
+typedef enum { COMBAT, DIALOGUE, DEPLACEMENT, SOIN, RECRUTEMENT, BOSS } EventType;
 
 typedef struct Event {
     char emitter[20];  // Qui génère l'événement ?
