@@ -42,7 +42,7 @@ void displayWorldMap(World *world) {
     printf("+------------------+\n");
     printf("|       🌊         |\n");
     printf("|  🏝️  🏠  🏝️        |\n");
-    printf("|       🚢         |\n");
+    printf("|   ☠️    🚢         |\n");
     printf("+------------------+\n");
 }
 

@@ -181,7 +181,7 @@ void displayWorldMap(World *world)
     else if (strcmp(world->name, "Grand Line") == 0)
     {
         printf("+------------------+\n");
-        printf("|  🌪️  🌊  ⛈️       |\n");
+        printf("|  🌪️  🌊  ⛈️    ☠️ |\n");
         printf("|  🏝️  🚢  🐋       |\n");
         printf("|  🌋    🌊  🏝️     |\n");
         printf("+------------------+\n");
