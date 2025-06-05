@@ -106,7 +106,7 @@ void moveOnMap(World *world, Player *player, char direction) {
 
 void triggerRandomEvent(World *world, Player *player) {
     srand(time(NULL));
-    int event = rand() % 3;
+    int event = rand() % 4;
 
     switch (event) {
         case 0:
@@ -122,8 +122,15 @@ void triggerRandomEvent(World *world, Player *player) {
             printf("[TRESOR] Vous trouvez une potion d'energie !\n");
             player->energy += 10;
             break;
-    }
+    
+        case 3:
+            printf("Vous trouvez de l'argent !\n");
+            player->money += 20;
+            printf("Vous gagnez 20 pièces d'or ! (Total: %d)\n", player->money);
+            break;
 }
+    }
+
 
 void freeWorlds(World *worlds) {
     while (worlds) {
