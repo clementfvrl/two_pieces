@@ -11,16 +11,16 @@ void startGame() {
     Player luffy = createPlayer("Luffy");
     SimulationTime simTime;
     EventQueue eventQueue;
-    
+
     initSimulationTime(&simTime);
     initEventQueue(&eventQueue);
 
     World *worlds = initializeWorlds();
-    
+
     int running = 1;
     while (running) {
         displayTime(&simTime);
-        
+
         printf("\nQue voulez-vous faire ?\n");
         printf("1. Explorer un monde\n");
         printf("2. Modifier la vitesse de simulation\n");
@@ -51,12 +51,41 @@ void startGame() {
                 }
 
                 if (current != NULL) {
-                    exploreWorld(current, &luffy);
-                    
-                    // Interaction avec PNJ
-                    if (current->npcs) {
-                        printf("\n💬 Vous rencontrez %s !\n", current->npcs->name);
-                        talkToNPC(current->npcs);
+                    int inWorld = 1;
+                    while (inWorld) {
+                        printf("\nVous êtes dans le monde : %s\n", current->name);
+                        printf("1. Explorer (événement aléatoire)\n");
+                        printf("2. Se déplacer sur la carte\n");
+                        printf("3. Revenir au menu principal\n");
+                        printf("> ");
+                        int action;
+                        if (scanf("%d", &action) != 1) {
+                            int c;
+                            while ((c = getchar()) != '\n' && c != EOF);
+                            printf("Entrée invalide.\n");
+                            continue;
+                        }
+
+                        switch (action) {
+                            case 1:
+                                exploreWorld(current, &luffy);
+                                if (current->npcs) {
+                                    printf("\n💬 Vous rencontrez %s !\n", current->npcs->name);
+                                    talkToNPC(current->npcs);
+                                }
+                                break;
+                            case 2:
+                                printf("Direction ? (z=haut, s=bas, q=gauche, d=droite) : ");
+                                char dir;
+                                scanf(" %c", &dir);
+                                moveOnMap(current, &luffy, dir);
+                                break;
+                            case 3:
+                                inWorld = 0;
+                                break;
+                            default:
+                                printf("Choix invalide.\n");
+                        }
                     }
                 } else {
                     printf("❌ Monde invalide !\n");
