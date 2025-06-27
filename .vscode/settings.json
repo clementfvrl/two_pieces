@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "save.h": "c",
+        "event.h": "c",
+        "game.h": "c",
+        "npc.h": "c",
+        "player.h": "c",
+        "services.h": "c",
+        "time.h": "c",
+        "world.h": "c"
+    }
+}

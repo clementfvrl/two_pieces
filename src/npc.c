@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "npc.h"
+#include "../include/npc.h"
 
 NPC *createNPC(const char *name, const char *dialogue, NPCType type) {
     NPC *npc = malloc(sizeof(NPC));

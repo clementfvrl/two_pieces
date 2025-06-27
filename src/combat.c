@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "combat.h"
-#include "player.h"
+#include "../include/combat.h"
+#include "../include/player.h"
 
 Enemy *createEnemy(const char *name, int health, int attack) {
     Enemy *enemy = malloc(sizeof(Enemy));

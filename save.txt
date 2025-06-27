@@ -1,6 +1,0 @@
-[Version]
-1.0
-[Joueur]
-Luffy 90 20 20
-[Temps]
-15 8 1 1 0 1

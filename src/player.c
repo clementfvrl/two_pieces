@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "player.h"
+#include "../include/player.h"
 
 Player createPlayer(const char *name) {
     Player player;

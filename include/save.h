@@ -5,8 +5,10 @@
 #include "world.h"
 #include "time.h"
 
-// Fonctions de sauvegarde au format texte
-void saveGame(const Player *player, const World *worlds, const SimulationTime *simTime, const char *filename);
+// Save game state to file
+void saveGame(const Player *player, const SimulationTime *simTime, const char *filename);
+
+// Load game state from file
 void loadGame(Player *player, SimulationTime *simTime, const char *filename);
 
 #endif

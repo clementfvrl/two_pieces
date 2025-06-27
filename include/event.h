@@ -82,7 +82,7 @@ void scheduleEvent(
     void *emitterPtr,
     void *targetPtr,
     void *contextData,
-    EventHandler handler);
+    void *handler);
 
 // Schedule a recurring event
 void scheduleRecurringEvent(

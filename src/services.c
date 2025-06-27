@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "services.h"
+#include "../include/services.h"
 
 void interactWithService(Player *player, Service *service) {
     switch (service->type) {
